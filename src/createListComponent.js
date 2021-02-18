@@ -506,14 +506,8 @@ export default function createListComponent({
 
       // Overscan by one item in each direction so that tab/focus works.
       // If there isn't at least one extra item, tab loops back around.
-      const overscanBackward =
-        !isScrolling || scrollDirection === 'backward'
-          ? Math.max(1, overscanCount)
-          : 1;
-      const overscanForward =
-        !isScrolling || scrollDirection === 'forward'
-          ? Math.max(1, overscanCount)
-          : 1;
+      const overscanBackward = Math.max(1, overscanCount);
+      const overscanForward = Math.max(1, overscanCount);
 
       return [
         Math.max(0, startIndex - overscanBackward),
